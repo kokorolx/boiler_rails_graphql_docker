@@ -37,7 +37,7 @@ This boilerplate works like a charm with the following gems:
 
 You can have a running backend in seconds on [heroku](https://www.heroku.com):
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/zauberware/rails-devise-graphql) 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/zauberware/rails-devise-graphql)
 
 or clone this repo:
 
@@ -52,25 +52,75 @@ Clone `env_sample` to .env for local development. We set it up with default rail
 cp env_sample .env
 ```
 
-Install the bundle:
+## How to run on local machine
+
+You need [nodejs](https://nodejs.org/en/download/) and [yarn](https://yarnpkg.com/lang/en/docs/install) installed.
+
+Run `yarn && bundle && rails s` to make the magic happen.
+
+## How to run with Docker
+
+You need `docker` and `docker-compose` installed (for MacOS just use [official app](https://docs.docker.com/engine/installation/mac/)).
+
+## Provisioning
+
+Run the following commands to prepare your Docker dev env:
 
 ```sh
-bundle install
+$ docker-compose build
+$ docker-compose run runner yarn install
+$ docker-compose run runner ./bin/setup
 ```
 
-Make sure the PostgreSQL is running on localhost. You may have to change your credentials under `/config/database.yml`:
+It builds the Docker image, installs Ruby and NodeJS dependencies, creates database, run migrations and seeds.
+
+You're all set! Now you're ready to code!
+
+## Commands
+
+- Running the app:
+
+You can run the Rails up using the following command:
 
 ```sh
-rake db:create
-rake db:migrate
-rake db:seed
+$ docker-compose up rails
 ```
 
-Run the development server:
+If you want to run Webpack Dev server as well:
 
 ```sh
-rails s
+$ docker-compose up rails webpacker
 ```
+
+## Dip
+
+You can also use [`dip`](https://github.com/bibendi/dip)–CLI utility for straightforward provisioning and interacting with an applications configured by `docker-compose`.
+
+To install `dip` copy and run the command below:
+
+```sh
+$ gem install dip
+```
+
+Then use the following commands:
+
+```sh
+# provision application
+dip provision
+
+# run web app with all debuging capabilities (i.e. `binding.pry`)
+dip rails s
+
+# run rails console
+dip rails c
+
+# run webpacker dev server
+dip up -d webpacker
+# `-d` - mean that service will run in detached (background) mode
+```
+
+
+
 
 Download a GraphQL client like [GraphiQL](https://github.com/graphql/graphiql) or others to access and test your API. Point the GraphQL IDE to `http://0.0.0.0:3000/graphql`
 
@@ -266,7 +316,7 @@ Create fake data easily with [faker gem](https://github.com/faker-ruby/faker). C
 
 [SimpleCov](https://github.com/simplecov-ruby/simplecov) is a code coverage analysis tool for Ruby. It uses Ruby's built-in Coverage library to gather code coverage data, but makes processing its results much easier by providing a clean API to filter, group, merge, format, and display those results, giving you a complete code coverage suite that can be set up with just a couple lines of code.
 
-Open test coverage results with 
+Open test coverage results with
 
 ```sh
   $ open /coverage/index.html
@@ -364,3 +414,16 @@ __Script:__ <https://github.com/zauberware/rails-devise-graphql>
 __Author website:__ [https://www.zauberware.com](https://www.zauberware.com)
 
 ![zauberware technologies](https://avatars3.githubusercontent.com/u/1753330?s=200&v=4)
+
+
+
+
+
+
+
+
+
+
+
+
+
