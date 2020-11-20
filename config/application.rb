@@ -43,7 +43,7 @@ module RailsDeviseGraphql
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
 
-    config.time_zone = 'Berlin'
+    config.time_zone = 'Asia/Saigon'
 
     # devise uses this for default from options
     config.action_mailer.default_options = { from: ENV['DEVISE_MAILER_FROM'] }
