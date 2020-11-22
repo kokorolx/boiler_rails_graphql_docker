@@ -32,7 +32,7 @@ gem 'rails-i18n', '~> 6.0.0'
 gem 'devise-i18n'                           # Install default translations
 gem 'rails_admin-i18n'                      # Use default rails_admin translations
 
-# gem 'graphiql-rails', group: :development
+gem 'graphiql-rails', group: :development
 
 # Use Puma as the app server
 gem 'puma', '~> 3.12'
@@ -65,6 +65,8 @@ group :development, :test do
   gem 'factory_bot_rails'                   # model mocks with factory bot
   gem 'rspec-rails', '~> 3.8'               # used testframework
   gem 'faker', '~> 1.8'
+  gem "letter_opener"
+  gem 'letter_opener_web'
 end
 
 group :test do
