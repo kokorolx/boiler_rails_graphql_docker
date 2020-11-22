@@ -16,6 +16,8 @@ Rails.application.routes.draw do
              },
              skip: :registrations # skip registration route
 
+
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   # Just a blank root path
   root 'pages#blank'
 end
