@@ -30,7 +30,7 @@ services:
       - NODE_ENV=development
       - RAILS_ENV=${RAILS_ENV:-development}
       - REDIS_URL=redis://redis:6379/
-      - DATABASE_URL=postgres://postgres:postgres@postgres:5432
+      - DATABASE_URL=postgres://postgres:kokor0_b01l3r@postgres:5432
       - BOOTSNAP_CACHE_DIR=/usr/local/bundle/_bootsnap
       - WEBPACKER_DEV_SERVER_HOST=webpacker
       - WEB_CONCURRENCY=1
@@ -52,9 +52,9 @@ services:
 
   rails:
     <<: *backend
-    command: bundle exec rails server -b 0.0.0.0
+    command: bundle exec rails server -b 0.0.0.0 -p 32323
     ports:
-      - '3000:3000'
+      - '32323:32323'
 
   sidekiq:
     <<: *backend
@@ -67,6 +67,9 @@ services:
       - postgres:/var/lib/postgresql/data
       - ./log:/root/log:cached
     environment:
+      - POSTGRES_PASSWORD=kokor0_b01l3r
+      - POSTGRES_DB=rails_devise_graphql_development
+      - POSTGRES_USER=postgres
       - PSQL_HISTFILE=/root/log/.psql_history
     ports:
       - 5432

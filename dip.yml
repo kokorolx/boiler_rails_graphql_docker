@@ -60,7 +60,7 @@ interaction:
 
   psql:
     service: postgres
-    command: psql -h postgres -U postgres -d example_app_dev
+    command: psql -h postgres -U postgres -d rails_devise_graphql_development
 
   'redis-cli':
     service: redis
@@ -71,4 +71,4 @@ provision:
   - dip compose up -d postgres redis
   - dip bundle install
   - dip yarn install
-  - dip rails db:setup
+  - dip rails db:migrate
