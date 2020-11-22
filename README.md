@@ -34,13 +34,6 @@ This boilerplate works like a charm with the following gems:
 
 
 ## 🚀 Quick start
-
-You can have a running backend in seconds on [heroku](https://www.heroku.com):
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/zauberware/rails-devise-graphql)
-
-or clone this repo:
-
 ```sh
 git clone https://github.com/zauberware/rails-devise-graphql my-saas-backend
 cd my-saas-backend
@@ -118,9 +111,6 @@ dip rails c
 dip up -d webpacker
 # `-d` - mean that service will run in detached (background) mode
 ```
-
-
-
 
 Download a GraphQL client like [GraphiQL](https://github.com/graphql/graphiql) or others to access and test your API. Point the GraphQL IDE to `http://0.0.0.0:3000/graphql`
 
@@ -356,14 +346,6 @@ Set the email address for your `ApplicationMailer` and devise emails with env va
 ### 18. Deployment
 The project runs on every server with ruby installed. The only dependency is a PostgreSQL database. Create a block `production:` in the`config/database.yml` for your connection.
 
-#### Heroku
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/zauberware/rails-devise-graphql)
-
-Choose the one click installer or push a clone of this repo to heroku by yourself. We added a `Profile` to the project and heroku run the `release:` statement after deploying a new version. Heroku will automatically set the db settings for your project, so there is nothing to do in `config/database.yml`.
-
-**Make sure all ENV vars are set and the database settings are valid.**
-
 #### Bitbucket Pipelines
 
 If you want to use [Bitbucket pipelines](https://bitbucket.org/product/de/features/pipelines) for CI you can use the sample file `bitbucket-pipelines.yml` in the project root.
@@ -380,32 +362,6 @@ It also triggers pipeline while opening a PR.
 - Registration add more fields (Firstname, Last name)
 - Tests for filter, sorting & pagination
 - Security: brakeman and bundler-audit
-
-Feel free to make feature request or join development!
-
-## Share this repo
-Help us to get more attention to this project:
-
-![Twitter URL](https://img.shields.io/twitter/url?label=Tweet%20about%20this%20project&style=social&url=https%3A%2F%2Fgithub.com%2Fzauberware%2Frails-devise-graphql)
-
-## 🚀 Contributors, backers & sponsors
-
-This project exists thanks to all the **people who contribute**.
-<a href="https://github.com/zauberware/rails-devise-graphql/graphs/contributors"><img src="https://opencollective.com/rails-devise-graphql/contributors.svg?width=890&button=false" /></a>
-
-Thank you to **all our backers**! 🙏 ([Become a backer](https://opencollective.com/rails-devise-graphql#backer))
-
-<a href="https://opencollective.com/rails-devise-graphql#backers" target="_blank"><img src="https://opencollective.com/rails-devise-graphql/backers.svg?width=890"></a>
-
-**Support this project by becoming a sponsor.** Your logo will show up here with a link to your website. ([Become a sponsor](https://opencollective.com/rails-devise-graphql#sponsor))
-
-<a href="https://opencollective.com/rails-devise-graphql/sponsor/0/website" target="_blank"><img src="https://opencollective.com/rails-devise-graphql/sponsor/0/avatar.svg"></a>
-
-
-## ❤️ Code of Conduct
-
-Please note that zauberware has a [Code of Conduct](https://github.com/zauberware/rails-devise-graphql/blob/master/CODE_OF_CONDUCT.md). By participating in this project online or at events you agree to abide by its terms.
-
 
 ## Author
 

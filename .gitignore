@@ -32,3 +32,6 @@ coverage
 .env.*
 
 dump.rdb
+
+public/assets/**
+.DS_Store
